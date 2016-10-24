@@ -1,0 +1,40 @@
+template(name='services')
+    .ui.hidden.divider
+    .ui.basic.very.padded.center.aligned.container
+        h1.ui.header Services
+            #add_service.ui.compact.basic.button
+                i.green.plus.icon
+                |Add Service
+    +cloud filter='service'
+    .ui.container
+        .ui.centered.three.cards
+            each services
+                +service
+
+
+template(name='service')
+    .ui.card
+        .image
+            a(href="/service/view/#{_id}")
+                img.ui.medium.image(src="{{c.url image_id width=800 height=600 crop='fill'}}")
+        .content
+            a(href="/service/view/#{_id}")
+                .header
+                    h2.ui.header #{title}
+        // .content
+        //     // .ui.header service Topics:
+        //     each tags
+        //         .ui.compact.button.service_tag(class=service_tag_class) #{this}
+        .content
+            |!{description}
+        .content
+            span.right.floated
+                if price
+                    |$#{price}
+                else
+                    .ui.basic.green.label Free
+            +favorite
+            if isInRole 'admin'
+                .edit_service.ui.primary.basic.button
+                    i.pencil.icon
+                    |Edit    

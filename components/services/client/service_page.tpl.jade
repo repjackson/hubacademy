@@ -1,0 +1,22 @@
+with service
+    .ui.container.padded.segment
+        .content
+            +back_button
+            .header
+                h2.ui.header #{title}
+            .description
+                // .ui.header service Topics:
+                each tags
+                    .ui.basic.label #{this}
+                |!{description}
+            .right.floated
+                .ui.horizontal.statistic
+                    .label
+                        i.dollar.icon
+                    .value #{price}
+        .ui.hidden.divider
+        +favorite
+        if isInRole 'admin'
+            a.edit_service.ui.primary.basic.button(href="/service/view/#{_id}")
+                i.pencil.icon
+                |Edit

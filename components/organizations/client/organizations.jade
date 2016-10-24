@@ -1,0 +1,37 @@
+template(name='organizations')
+    .ui.container
+        #organization_slider(style='width: 1000px; height: 200px;')
+            .ls-slide(data-ls='slidedelay: 2000;')
+                img.ls-bg(src="{{c.url 'organization_banner' width=1000 height=200 crop='fill' gravity='north' effect='art:primavera'}}", alt='Slide background')
+                h1.ls-l.overlay-text.slider-text(style="top: 50%; text-size: 300%;") 
+                    | Community at Impact Hub Boulder
+        .ui.basic.segment
+            .ui.stackable.divided.grid
+                .twelve.wide.column
+                    .ui.divided.items
+                        each organizations
+                            +organization
+                .four.wide.column
+                    +cloud filter='organization'
+
+
+template(name='organization')
+    .ui.item
+        .image
+            img.ui.medium.image(src="{{c.url image_id width=500 crop='fit'}}")
+        .content
+            .header
+                h2.ui.header #{title}
+            .meta
+                a(href=link target="_blank") #{link}
+            .description
+                |!{description}
+            .extra
+                each tags
+                    .ui.compact.button.organization_tag(class=organization_tag_class) #{this}
+                    // .ui.basic.label(class=organization_tag_class) #{this}
+            if isInRole 'admin'
+                .extra
+                    .edit_organization.ui.right.floated.primary.basic.button
+                        i.pencil.icon
+                        |Edit
