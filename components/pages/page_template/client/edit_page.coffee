@@ -13,7 +13,7 @@ Template.edit_page.helpers
         
 Template.edit_page.events
     'click #save_page': ->
-        FlowRouter.go "/page/view/#{@_id}"
+        FlowRouter.go "/#{@name}"
 
 
 
