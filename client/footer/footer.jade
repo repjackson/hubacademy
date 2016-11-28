@@ -4,7 +4,7 @@ template(name='footer')
             .center.aligned.column
                 // +twitter_widget
             .center.aligned.column
-                // +facebook_widget
+                +loginButtons
             .column
                 // +badges
                 +contact_info
@@ -44,15 +44,3 @@ template(name='contact_info')
         h3
             |Map
             i.right.arrow.icon
-    .ui.inverted.dividing.header Hours
-    | MON to FRI: 9am to 6pm
-    br
-    | SAT to SUN: closed
-    br
-    | Weather policy follows BVSD closures
-    br
-    br
-    a(href='https://hubboulder.formstack.com/forms/updateccinfo' target='_blank') 
-        h3
-            |Update your payment info 
-            i.right.arrow.icon    

@@ -1,7 +1,5 @@
 signInRequired = FlowRouter.group(triggersEnter: [ AccountsTemplates.ensureSignedIn ])
 
-
-
 FlowRouter.notFound =
     action: ->
         FlowRouter.go '/'
@@ -13,55 +11,33 @@ FlowRouter.route '/', action: (params) ->
         main: 'home'
         footer: 'footer'
 
-
-
-
-# FlowRouter.route '/editConversation/:docId', action: (params) ->
-#     BlazeLayout.render 'layout',
-#         main: 'conversation'
-
-
-
-# Pages
-
-FlowRouter.route '/partners', action: (params) ->
+FlowRouter.route '/program_themes', action: (params) ->
     BlazeLayout.render 'layout',
         nav: 'nav'
-        main: 'partners'
+        main: 'program_themes'
 
-FlowRouter.route '/academy', action: (params) ->
+
+FlowRouter.route '/global', action: (params) ->
     BlazeLayout.render 'layout',
         nav: 'nav'
-        main: 'academy'
+        main: 'global'
 
-
-FlowRouter.route '/host-meeting', action: (params) ->
+FlowRouter.route '/enroll', action: (params) ->
     BlazeLayout.render 'layout',
         nav: 'nav'
-        main: 'host_meeting'
+        main: 'enroll'
 
 FlowRouter.route '/about', action: (params) ->
     BlazeLayout.render 'layout',
         nav: 'nav'
         main: 'about'
-        
-FlowRouter.route '/join', action: (params) ->
+
+FlowRouter.route '/sponsors', action: (params) ->
     BlazeLayout.render 'layout',
         nav: 'nav'
-        main: 'join'
-        
-FlowRouter.route '/permanent-desk-program', action: (params) ->
+        main: 'sponsors'
+
+FlowRouter.route '/donate', action: (params) ->
     BlazeLayout.render 'layout',
         nav: 'nav'
-        main: 'permanent'
-        
-FlowRouter.route '/permanent-desk-application', action: (params) ->
-    BlazeLayout.render 'layout',
-        nav: 'nav'
-        main: 'permanent_application'
-        
-FlowRouter.route '/member_discount', action: (params) ->
-    BlazeLayout.render 'layout',
-        nav: 'nav'
-        main: 'member_discount'
-        
+        main: 'donate'

@@ -1,7 +1,21 @@
 template(name='home')
     // .ui.container
     +slider
+    // .ui.inverted.vertical.masthead.center.aligned.segment
+    //     .ui.container
+    //         .ui.large.secondary.inverted.pointing.menu
+    //             a.item(href='/about_academy' class="{{isActivePath '/about_academy'}}")
+    //                 strong About the Academy
+    //             a.item(href='/global_network' class="{{isActivePath '/global_network'}}")
+    //                 strong Global Network
+    //             a.item(href='/get_involved' class="{{isActivePath '/get_involved'}}")
+    //                 strong Get Involved
+    //             a.item(href='/events' class="{{isActivePath '/events'}}")
+    //                 strong Events Calendar
+    //             a.item(href='/program_themes' class="{{isActivePath '/program_themes'}}")
+    //                 strong Program Themes
     +call_to_action
+    +how_it_works
     .ui.container
         .ui.basic.segment
             +featured_events
@@ -13,7 +27,7 @@ template(name='home')
 
 template(name='call_to_action')
     .call_to_action
-        .ui.very.padded.basic.inverted.segment
+        .ui.very.padded.basic.inverted.attached.segment
             .ui.stackable.container.grid
                 .ten.wide.column
                     // h1.ui.header COME FOR COWORKING, STAY FOR COMMUNITY
@@ -35,10 +49,12 @@ template(name='call_to_action')
                     // a.impact-button-light(href='#subscribe')
                     //     | Subscribe
                     .ui.hidden.divider
-                    a(href='/member_discount')
-                        img.ui.centered.rounded.image(src="{{c.url 'member_discount_cropped3' width=250 crop='fill'}}")
+                    // a(href='/member_discount')
+                    //     img.ui.centered.rounded.image(src="{{c.url 'member_discount_cropped3' width=250 crop='fill'}}")
 
 
+template(name='how_it_works')
+    .ui.horizontal.divider.header How It Works
 
 
                     

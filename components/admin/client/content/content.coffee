@@ -2,7 +2,7 @@
 Template.content.onCreated ->
     self = @
     self.autorun ->
-        self.subscribe 'all_docs', selected_content_tags.array()
+        self.subscribe 'all_docs'
 
 
 Template.content.helpers

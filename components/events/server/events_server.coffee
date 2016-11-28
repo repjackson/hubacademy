@@ -1,6 +1,7 @@
 Meteor.publish 'featured_events', ->
     Docs.find  {       
         featured: true
+        tags: $in: ['academy']
         type: 'event'
         }, 
         sort: start_date: -1
@@ -26,6 +27,8 @@ Meteor.publish 'selected_events', (selected_event_tags)->
     
     self = @
     match = {}
+    selected_event_tags.push 'academy'
+
     if selected_event_tags.length > 0 then match.tags = $all: selected_event_tags
     match.type = 'event'
     if not @userId or not Roles.userIsInRole(@userId, ['admin'])
@@ -52,6 +55,7 @@ Meteor.publish 'all_events', ->
 Meteor.publish 'event_tags', (selected_event_tags)->
     self = @
     match = {}
+    selected_event_tags.push 'academy'
     if selected_event_tags.length > 0 then match.tags = $all: selected_event_tags
     match.type = 'event'
     

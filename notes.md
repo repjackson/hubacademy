@@ -1,17 +1,31 @@
 
-dynamic organization collage on about us 
-
-
-meet academy board members on about us page
-
     
 DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy --settings settings.json www.collider.cloud
 
 mongo --ssl --sslAllowInvalidCertificates aws-us-east-1-portal.21.dblayer.com:10444/facetdb -u facetadmin -pTurnf34ragainst!
 
+*academy notes
 
-redirect hot seats to join
+unreasonable homepage clone
+-how it works
+-two images, difference between academy and hub
+-our programs
+--4 categories
+-mentors/sponsors
+--
+-academy stories (featured just like hub)
 
-thank you page
+order
+<!---about the acdemy-->
+-impact calendar
+-program descriptions
+-academy stories
+-get involved
 
-google forms addons with facebook pixel
+subdued headers, try header in between divider
+
+
+
+todo from savannah
+
+make header big, white, center
